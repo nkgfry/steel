@@ -46,3 +46,49 @@ h2 {
   font-weight: 900;
 }
 
+/*********************************
+Summary, preamble, main formatting
+*********************************/
+
+.summary,
+.preamble,
+.explanation,
+.participation,
+.benefits,
+.requirements {
+  margin: 0;
+  padding: 0 0.25em;
+  font-size: 1.24em;
+  font-weight: lighter;
+}
+
+.summary {
+  padding: 0 0.5em;
+}
+
+.summary p,
+.preamble p,
+.explanation p,
+.participation p,
+.benefits p,
+.requirements p {
+  margin: 0.6em 0;
+  line-height: 1.1em;
+}
+
+.summary a,
+.preamble a,
+.explanation a,
+.participation a,
+.benefits a,
+.requirements a {
+  padding: 0 3px;
+  border-radius: 2px;
+  background: #fff;
+  color: #000;
+  text-decoration: none;
+}
+
+.page-wrapper h3 {
+  text-transform: uppercase;
+}
