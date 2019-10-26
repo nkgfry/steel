@@ -26,6 +26,14 @@ body {
   text-align: center;
 }
 
+@media (min-width: 400px) {
+  body {
+    background: url(i/hook3.svg) 50% 750% / 75% no-repeat fixed,
+                url(i/bg2.svg) right top / 33.3% no-repeat fixed,
+              #333 url(i/bg.png) bottom / contain no-repeat fixed;
+  }
+}
+
 /*********************************
 Header section
 *********************************/
