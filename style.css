@@ -15,3 +15,14 @@ html * {
 @font-face {font-family: maseo;
             src: url(maseo.ttf);
 }
+
+body {
+  background: #000;
+  color: #fff;
+}
+
+.page-wrapper * {
+  font-family: maseo;
+  text-align: center;
+}
+
