@@ -1,0 +1,13 @@
+/*********************************
+Normalize CSS and general and 
+common settings
+*********************************/
+
+html {
+  font-size: 100%;
+  font-family: sans-serif;
+}
+
+html * {
+  box-sizing: border-box;
+}
