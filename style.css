@@ -11,3 +11,7 @@ html {
 html * {
   box-sizing: border-box;
 }
+
+@font-face {font-family: maseo;
+            src: url(maseo.ttf);
+}
