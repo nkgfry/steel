@@ -146,3 +146,21 @@ Design Selection Section
   color: #000000;
 }
 
+/*********************************
+Design Archives Section
+*********************************/
+
+.design-archives ul > li{
+  padding: 0 0 0.6em;
+  font-size: 1.2em;
+}
+
+/*********************************
+Zen Resources Section
+*********************************/
+
+.zen-resources ul > li{
+  padding: 0 0 0.6em;
+  font-size: 1.2em;
+}
+
