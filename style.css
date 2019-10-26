@@ -26,3 +26,23 @@ body {
   text-align: center;
 }
 
+/*********************************
+Header section
+*********************************/
+
+header {
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0.35em 0;
+  font-size: 3em;
+  font-weight: 1000;
+  line-height: 1em;
+}
+
+h2 {
+  margin: 0.2em;
+  font-weight: 900;
+}
+
