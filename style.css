@@ -92,3 +92,26 @@ Summary, preamble, main formatting
 .page-wrapper h3 {
   text-transform: uppercase;
 }
+
+/*********************************
+Sidebar Section
+*********************************/
+
+.sidebar h3 {
+  margin: 0 0 0.6em;
+  font-size: 1.5em;
+  font-weight: 900;
+}
+
+.sidebar ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.sidebar a:link,
+.sidebar a:visited {
+  color: #ffffff;
+  text-decoration: none;
+}
+
