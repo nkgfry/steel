@@ -239,6 +239,13 @@ Design Archives Section
   font-size: 1.2em;
 }
 
+@media (min-width: 800px) {
+  .design-archives {
+    right: 0;
+    top: 0;
+  }
+}
+
 /*********************************
 Zen Resources Section
 *********************************/
