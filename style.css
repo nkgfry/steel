@@ -223,6 +223,13 @@ Design Selection Section
   color: #000000;
 }
 
+@media (min-width: 800px) {
+  .design-selection {
+    top: 0;
+    left: 0;
+  }
+}
+
 /*********************************
 Design Archives Section
 *********************************/
