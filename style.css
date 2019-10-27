@@ -123,6 +123,75 @@ Sidebar Section
   text-decoration: none;
 }
 
+@media (min-width: 400px) {
+  .sidebar {
+    position: relative;
+    width: 24em;
+    margin: 0 auto 12em;
+    padding: 0 4.5em;
+    background: url(i/layer-middle.svg) repeat-y center top;
+  }
+
+  .sidebar::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2em;
+    left: 0;
+    bottom: -2em;
+    background: url(i/layer-frame.svg) no-repeat center bottom;
+  }
+}
+
+@media (min-width: 800px) {
+  .sidebar {
+    margin-top: 2em;
+    padding:  2em;
+    width: 46.7em;
+    height: 25em;
+    background: none;
+  }
+
+  .sidebar::after {
+    background: none;
+  }
+
+  .design-selection,
+  .design-archives,
+  .zen-resources {
+    position: absolute;
+    width: 23em;
+    padding: 1em 4.5em 0.5em !important; /* Otherwise overwritten by default selector */
+    background: url(i/layer-middle.svg) repeat-y center top;
+  }
+
+  .design-selection::before,
+  .design-archives::before,
+  .zen-resources::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 30em;
+    left: 0;
+    top: -30em;
+    background: url(i/layer-frame.svg) no-repeat center 28em,
+                url(i/hook3.svg) no-repeat center bottom / 19em;
+    z-index: -1;
+  }
+
+  .design-selection::after,
+  .design-archives::after,
+  .zen-resources::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2em;
+    left: 0;
+    bottom: -2em;
+    background: url(i/layer-frame.svg) no-repeat center bottom;
+  }
+}
+
 /*********************************
 Design Selection Section
 *********************************/
