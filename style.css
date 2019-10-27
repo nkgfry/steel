@@ -255,3 +255,9 @@ Zen Resources Section
   font-size: 1.2em;
 }
 
+@media (min-width: 800px) {
+  .zen-resources {
+    right: 0;
+    top: 13.6em;
+  }
+}
