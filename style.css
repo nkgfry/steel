@@ -4,6 +4,8 @@ common settings
 *********************************/
 
 html {
+  width: 100%;
+  height: 100%;
   font-size: 100%;
   font-family: sans-serif;
 }
@@ -16,9 +18,35 @@ html * {
             src: url(maseo.ttf);
 }
 
+body::before {
+  content: "";
+  display: block;
+  width: 26%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background: url(i/bg1.svg) left top / 156px no-repeat fixed;
+}
+
 body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
   background: #000;
   color: #fff;
+}
+
+body::after {
+  content: "";
+  display: block;
+  width: 33.3%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: -1;  /*hiding the right crane when width < 400px*/
 }
 
 .page-wrapper * {
@@ -28,9 +56,85 @@ body {
 
 @media (min-width: 400px) {
   body {
-    background: url(i/hook3.svg) 50% 750% / 75% no-repeat fixed,
-                url(i/bg2.svg) right top / 33.3% no-repeat fixed,
-              #333 url(i/bg.png) bottom / contain no-repeat fixed;
+    background: url(i/hook3.svg) 50% 200% / 300px no-repeat fixed,
+              #333 url(i/bg.png) bottom / 100% auto no-repeat fixed;
+  }
+
+  body::after {
+    background: url(i/bg2.svg) right top / 180px no-repeat fixed;
+  }
+
+  .page-wrapper::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2em;
+    position: relative;
+    top: -2em;
+    background: url(i/layer-frame.svg) center top no-repeat;
+  }
+
+  .page-wrapper {
+    width: 360px;
+    position: relative;
+    margin: 7.5em auto 0;
+    background: url(i/layer-middle.svg);
+    animation-name: load-400;
+    animation-duration: 1.5s;
+  }
+}
+
+@media (max-width: 600px) {
+  body::before {
+    display: none;
+  }
+  
+  body::after {
+    background: url(i/bg2.svg) right top / 135px no-repeat fixed;
+  }
+}
+
+@media (min-width: 800px) and (max-width: 1366px) {
+  body {
+    background: url(i/hook3.svg) left 60.4px top -190px / 38% repeat-y,
+                url(i/hook3.svg) right 60.4px top -190px / 38% repeat-y,
+              #333 url(i/bg.png) bottom / 100% auto no-repeat fixed;
+  }
+  
+  .page-wrapper::before {
+    display: none;
+  }
+  
+  div.page-wrapper {
+    width: 800px;
+    background: initial;
+    margin: 0 auto;
+    animation-name: load-800;
+    animation-duration: 1.5s;
+  }
+
+  section {
+    position: initial;
+    padding: 5em 30.4px;
+  }
+}
+
+@media (min-width: 1367px) {
+  body::before {
+    background: url(i/bg1.svg) left top / 300px no-repeat fixed;
+  }
+
+  body::after {
+    background: url(i/bg2.svg) right top / 300px no-repeat fixed;
+  }
+
+  .page-wrapper {
+    background: initial;
+    animation: none;
+  }
+
+  .page-wrapper::before {
+    display: none;
   }
 }
 
@@ -43,15 +147,136 @@ header {
 }
 
 h1 {
-  margin: 0.35em 0;
-  font-size: 3em;
-  font-weight: 1000;
+  margin: 0.45em 2em;
+  font-size: 2.8em;
   line-height: 1em;
 }
 
 h2 {
-  margin: 0.2em;
-  font-weight: 900;
+  margin: 0.4em;
+  font-size: 1.6em;
+  line-height: 1em;
+}
+
+@media (min-width: 400px) {
+  section {
+    position: relative;
+    bottom: 0.8em;
+  }
+
+  h1,
+  h2{
+    margin: 0;
+  }
+
+  h1 {
+    padding: 0 0 0.2em 0;
+  }
+
+  h2 {
+    padding: 0.4em 3em;
+  }
+}
+
+@media (min-width: 800px) {
+  header {
+    width: 360px;
+    position: relative;
+    margin-right: 19px;
+    float: left;
+    background: url(i/layer-middle.svg) center top / 100%;
+  }
+
+  header {
+    margin-bottom: 4.3em;
+  }
+
+  header::before {
+    content: "";
+    display: inline-block;
+    width: 360px;
+    height: 32px;
+    position: absolute;
+    top: -32px;
+    right: 0;
+    background: url(i/layer-frame.svg) center top / 100% no-repeat;
+  }
+
+  header::after {
+    content: "";
+    display: inline-block;
+    width: 360px;
+    height: 32px;
+    position: absolute;
+    right: 0;
+    bottom: -32px;
+    background: url(i/layer-frame.svg) center bottom / 100% no-repeat;
+  }
+
+  h1 {
+    padding-top: 20px;
+  }
+
+  h2 {
+    padding: 20px 3em;
+  } 
+}
+
+@media (min-width: 1367px) {
+  body {
+    background: #333 url(i/bg.png) bottom / 100% auto no-repeat fixed;
+  }
+
+  header {
+    width: 360px;
+    position: relative;
+    top: -35px;
+    left: 42px;
+    margin-right: 19px;
+    padding: 2em 0;
+    float: left;
+    background: url(i/layer-middle.svg) center top / 100%;
+    transition: top 1.5s,
+                transform 1.2s 1.5s;
+  }
+
+  header::before {
+    content: "";
+    display: inline-block;
+    width: 360px;
+    height: 400px;
+    position: absolute;
+    top: -400px;
+    right: 0;
+    background: url(i/hook3.svg) center bottom / 80% no-repeat,
+                url(i/layer-frame.svg) left 0 top 368px / 100% no-repeat;
+  }
+
+  header::after {
+    content: "";
+    display: inline-block;
+    width: 360px;
+    height: 32px;
+    position: absolute;
+    right: 0;
+    bottom: -32px;
+    background: url(i/layer-frame.svg) center bottom / 100% no-repeat;
+  }
+
+  header:hover {
+    top: 175px;
+    transform: scale(1.25, 1.25);
+  }
+
+  h1 {
+    padding: 0 0 0.4em;
+    font-size: 3em;
+  }
+
+  h2 {
+    padding: 0;
+    font-size: 0.8em;
+  }
 }
 
 /*********************************
@@ -60,36 +285,23 @@ Summary, preamble, main formatting
 
 .summary,
 .preamble,
-.explanation,
-.participation,
-.benefits,
-.requirements {
+.main div {
   margin: 0;
-  padding: 0 0.25em;
+  padding: 0em 0.7em;
   font-size: 1.24em;
-  font-weight: lighter;
 }
 
 .summary {
-  padding: 0 0.5em;
+  padding: 0 1em;
 }
 
-.summary p,
-.preamble p,
-.explanation p,
-.participation p,
-.benefits p,
-.requirements p {
+p {
   margin: 0.6em 0;
   line-height: 1.1em;
 }
 
-.summary a,
-.preamble a,
-.explanation a,
-.participation a,
-.benefits a,
-.requirements a {
+.intro a,
+.main a {
   padding: 0 3px;
   border-radius: 2px;
   background: #fff;
@@ -97,8 +309,350 @@ Summary, preamble, main formatting
   text-decoration: none;
 }
 
-.page-wrapper h3 {
+.preamble h3,
+.main h3 {
   text-transform: uppercase;
+  line-height: 1em;
+}
+
+@media (min-width: 400px) {
+  .summary,
+  .preamble,
+  .main div {
+    padding: 0em 3.1em;
+  }
+
+  .summary p:last-child {
+    padding-top: 0.9em;
+  }
+  
+  .preamble h3,
+  .main h3 {
+    margin: 0;
+    padding: 0.6em 0;
+  }  
+
+  p {
+    margin: 0;
+    padding: 0.25em 0;
+    line-height: 1.15em;
+  }
+
+  .requirements p:last-child a:last-child {
+    display: inline-block;
+    width: 88%;
+  }
+}
+
+@media (min-width: 800px) and (max-width: 1366px) {
+  .preamble,
+  section div,
+  .explanation,
+  .participation,
+  .benefits,
+  .requirements h3,
+  .requirements p {
+    width: 360px;
+    position: relative;
+    margin-right: 19px;
+    float: left;
+    background: url(i/layer-middle.svg) center top / 100%;
+  }
+
+  .summary {
+    margin-bottom: 3.8em;
+  }
+
+  .preamble {
+    margin-top: 0.68em;
+  }
+
+  div.explanation {
+    margin-bottom: 4.5em;
+  }
+
+  div.participation {
+    margin-right: 17.5px;
+    margin-left: 32px;
+  }
+
+  div.benefits {
+    margin-bottom: 4.5em;
+  }
+
+  div.requirements {
+    padding: 0;
+  }
+
+  div.requirements h3 {
+    margin-bottom: 4em;
+  }
+
+  div.requirements h3,
+  div.requirements p {
+    padding: 0.7em 3.3em;
+  }
+
+  div.requirements p:nth-last-child(5) {
+    margin-bottom: 4.5em;
+  }
+
+  div.requirements p:nth-last-child(4) {
+    margin-left: 32px;
+  }
+
+  div.requirements p:nth-last-child(3) {
+    margin-bottom: 4.5em;
+  }
+
+  div.requirements p:nth-last-child(2) {
+    margin-bottom: 4.5em;
+  }
+
+  div.requirements p:nth-last-child(1) {
+    margin-left: 32px;
+  }
+
+  .summary::before,
+  .preamble::before,
+  .explanation::before,
+  .participation::before,
+  .benefits::before,
+  .requirements h3::before,
+  .requirements p::before {
+    content: "";
+    display: inline-block;
+    width: 360px;
+    height: 32px;
+    position: absolute;
+    top: -32px;
+    right: 0;
+    background: url(i/layer-frame.svg) center top / 100% no-repeat;
+  }
+
+  .summary::after,
+  .preamble::after,
+  .explanation::after,
+  .participation::after,
+  .benefits::after,
+  .requirements h3::after,
+  .requirements p::after {
+    content: "";
+    display: inline-block;
+    width: 360px;
+    height: 32px;
+    position: absolute;
+    right: 0;
+    bottom: -32px;
+    background: url(i/layer-frame.svg) center bottom / 100% no-repeat;
+  }
+
+  .main h3 {
+    padding-bottom: 0;
+  }
+
+  .intro p,
+  .main p {
+    padding: 20px 0.2em 0 0.2em;
+  }
+
+  .intro p:last-child,
+  .main p:last-child {
+    padding-bottom: 20px;
+  } 
+}
+
+@media (min-width: 1367px) {
+  .summary {
+    width: 360px;
+    position: absolute;
+    top: -260px;
+    left: 285px;
+    padding: 1.5em 3em;
+    background: url(i/layer-middle.svg) center top / 100%;
+    transform: skewY(4.5deg);
+    transition: top 1.5s,
+                left 1s 1.5s,
+                transform 1.5s;
+  }
+
+  .summary:hover {
+    top: 100px;
+    left: 250px;
+    transform: scale(1.2, 1.2) skewY(0);
+  }
+
+  .summary::before{
+    content: "";
+    display: inline-block;
+    width: 360px;
+    height: 435px;
+    position: absolute;
+    top: -434px;
+    left: 0;
+    background: url(i/hook2.svg) left 160px bottom 25px / 12% no-repeat,
+                url(i/layer-frame.svg) left 0 top 400px / 100% no-repeat;
+  }
+
+  .summary::after {
+    content: "";
+    display: inline-block;
+    width: 360px;
+    height: 35px;
+    position: absolute;
+    left: 0;
+    bottom: -35px;
+    background: url(i/layer-frame.svg) center bottom / 100% no-repeat;
+  }
+
+  .preamble {
+    width: 420px;
+    position: absolute;
+    top: -600px;
+    left: -370px;
+    padding: 1em 3em;
+    background: url(i/layer-middle.svg) center top / 100%;
+    transform: skewY(-5deg);
+    transition: top 1.2s,
+                left 1s 1.2s,
+                transform 1.2s;
+  }
+
+  .preamble:hover {
+    top: 30px;
+    left: -280px;
+    transform: scale(1.1, 1.1) skewY(0);
+  }
+
+  .preamble::before{
+    content: "";
+    display: inline-block;
+    width: 420px;
+    height: 435px;
+    position: absolute;
+    top: -434px;
+    left: 0;
+    background: url(i/hook1.svg) left 180px bottom 25px / 12% no-repeat,
+                url(i/layer-frame.svg) left 0 top 400px / 100% no-repeat;
+  }
+
+  .preamble::after {
+    content: "";
+    display: inline-block;
+    width: 420px;
+    height: 35px;
+    position: absolute;
+    left: 0;
+    bottom: -35px;
+    background: url(i/layer-frame.svg) center bottom / 100% no-repeat;
+  }
+
+  .summary p {
+    padding: 0;
+    font-size: 0.8em;
+  }
+
+  div.preamble * {
+    padding: 0.25em 0;
+  }
+
+  div.preamble p {
+    font-size: 0.95em;
+  }
+}
+
+/*********************************
+Footer Section
+*********************************/
+
+.main footer {
+  display: inline-block;
+  margin: 0 0.7em;
+  font-size: 1.25em;
+  text-align: left;
+}
+
+.main footer a  {
+  padding-left: 0;
+  background: initial;
+  color: #fff;
+}
+
+footer a::after {
+  margin-bottom: 0.4em;
+  padding-left: 2px;
+  border-radius: 2px;
+  background: #fff;
+  color: #000;
+  text-align: left;
+}
+
+footer a:nth-child(1)::after {
+  content: "Check the validity of this site's HTML";
+  display: inline-block;
+  width: 100%;
+}
+
+footer a:nth-child(2)::after {
+  content: "Check the validity of this site's CSS";
+  display: inline-block;
+  width: 100%;
+}
+
+footer a:nth-child(3)::after {
+  content: "View the Creative Commons license of this site: Attribution-NonCommercial-ShareAlike.";
+  display: inline-block;
+  width: 100%;
+}
+
+footer a:nth-child(4)::after {
+  content: "Read about the accessibility of this site";
+  display: inline-block;
+  width: 100%;
+}
+
+footer a:nth-child(5)::after {
+  content: "Fork this site on Github";
+  display: inline-block;
+  width: 100%;
+}
+
+@media (min-width: 400px) {
+  .main footer {
+    padding: 0.5em 2.5em;
+  }
+}
+
+@media (min-width: 800px) and (max-width: 1366px) {
+  .main footer {
+    width: 360px;
+    position: relative;
+    margin: 0;
+    float: left;
+    background: url(i/layer-middle.svg) center top / 100%;
+  }
+
+  footer::before {
+    content: "";
+    display: inline-block;
+    width: 360px;
+    height: 32px;
+    position: absolute;
+    top: -32px;
+    right: 0;
+    background: url(i/layer-frame.svg) center top / 100% no-repeat;
+  }
+
+  footer::after {
+    content: "";
+    display: inline-block;
+    width: 360px;
+    height: 32px;
+    position: absolute;
+    right: 0;
+    bottom: -32px;
+    background: url(i/layer-frame.svg) center bottom / 100% no-repeat;
+  }
 }
 
 /*********************************
@@ -435,5 +989,25 @@ Zen Resources Section
     width: 25%;
     right: 3em;
     top: 12em;
+  }
+}
+/*********************************
+Keyframes
+*********************************/
+
+@keyframes load-400 {
+  from {top: -8em;}
+  to {top: 0;}
+}
+
+@keyframes load-800 {
+  from {top: 10em;}
+  to {top: 0;}
+}
+
+@keyframes header {
+  from {
+    top: 175px;
+    transform: scale(1.25, 1.25);
   }
 }
