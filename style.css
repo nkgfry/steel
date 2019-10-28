@@ -344,9 +344,18 @@ Zen Resources Section
   font-size: 1.2em;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 800px) and (max-width: 1366px) {
   .zen-resources {
     right: 0;
     top: 13.6em;
+  }
+}
+
+@media (min-width: 1367px) {
+  .zen-resources {
+    position: absolute;
+    width: 25%;
+    right: 3em;
+    top: 12em;
   }
 }
