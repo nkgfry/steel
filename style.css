@@ -320,10 +320,18 @@ Design Archives Section
   font-size: 1.2em;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 800px) and (max-width: 1366px) {
   .design-archives {
     right: 0;
     top: 0;
+  }
+}
+
+@media (min-width: 1367px) {
+  .design-archives {
+    position: absolute;
+    width: 25%;
+    right: 3em;
   }
 }
 
