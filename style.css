@@ -192,6 +192,39 @@ Sidebar Section
   }
 }
 
+@media (min-width: 1367px) {
+  .sidebar {
+    position: relative;
+    width: 44em;
+    height: 34em;
+    top: 5em;
+    margin: 0;
+    padding: 3.8em 3.2em;
+    background: url(i/layer.svg) no-repeat center top / 100% 100%;
+    transform: perspective(1100px) rotateY(45deg);
+  }
+
+  .sidebar::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 30em;
+    left: 0;
+    top: -27em;
+    background: url(i/hook3.svg) no-repeat center bottom / 19em;
+    z-index: -1;
+  }
+
+  .design-archives ul > li,
+  .zen-resources ul > li {
+    margin-bottom: 0.7em;
+  }
+
+  .sidebar::after {
+    background: none;
+  }
+}
+
 /*********************************
 Design Selection Section
 *********************************/
