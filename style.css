@@ -202,6 +202,13 @@ Sidebar Section
     padding: 3.8em 3.2em;
     background: url(i/layer.svg) no-repeat center top / 100% 100%;
     transform: perspective(1100px) rotateY(45deg);
+    transition: transform 1s linear,
+                top 1s linear 1s;
+  }
+
+  .sidebar:hover {
+    transform: perspective(1100px) rotateY(0deg);
+    top: 10em;
   }
 
   .sidebar::before {
@@ -291,8 +298,15 @@ Design Selection Section
     height: 1em;
     background-color: #111111;
     overflow: hidden;
+    white-space: nowrap;
     font-size: 1.5em;
     z-index: 1;
+    text-indent: 100%;
+    animation: slide 9s linear infinite running;
+  }
+
+  .designer-name:hover {
+    animation-play-state: paused;
   }
 
   .designer-name::before {
@@ -308,6 +322,26 @@ Design Selection Section
   .design-selection .designer-name:link,
   .design-selection .designer-name:visited {
     color: #fff;
+  }
+
+/* Keyframes for designer name animation */
+
+@keyframes slide {
+  0% {
+    text-indent: 100%;
+  }
+
+  80% {
+    text-indent: 0;
+  }
+
+  87% {
+    text-indent: -50%;
+  }
+
+  /* Short pause before restarting */
+  100% {
+    text-indent: -50%;
   }
 }
 
