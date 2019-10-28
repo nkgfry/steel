@@ -324,6 +324,50 @@ Design Selection Section
     color: #fff;
   }
 
+  /* Individual adjustments to animation for each designer name */
+
+  .design-selection ul > li:nth-child(1) .designer-name {
+    animation-duration: 12s;
+    animation-delay: 0s;
+  }
+
+  .design-selection ul > li:nth-child(2) .designer-name {
+    animation-duration: 7.9s;
+    animation-delay: 0s;
+  }
+
+  .design-selection ul > li:nth-child(3) .designer-name {
+    animation-duration: 7.5s;
+    animation-delay: 0s;
+  }
+
+  .design-selection ul > li:nth-child(4) .designer-name {
+    animation-duration: 12s;
+    animation-delay: 0.15s;
+  }
+
+  .design-selection ul > li:nth-child(5) .designer-name {
+    animation-duration: 7s;
+    animation-delay: 0s;
+  }
+
+  .design-selection ul > li:nth-child(6) .designer-name {
+    animation-duration: 12s;
+    animation-delay: 0.3s;
+  }
+
+  .design-selection ul > li:nth-child(7) .designer-name {
+    animation-duration: 7.9s;
+    animation-delay: 0.1s;
+  }
+
+  .design-selection ul > li:nth-child(8) .designer-name {
+    animation-duration: 12s;
+    animation-delay: 0s;
+  }
+
+}
+
 /* Keyframes for designer name animation */
 
 @keyframes slide {
