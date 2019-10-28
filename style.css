@@ -256,10 +256,58 @@ Design Selection Section
   color: #000000;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 800px) and (max-width: 1366px) {
   .design-selection {
     top: 0;
     left: 0;
+  }
+}
+
+@media (min-width: 1367px) {
+  .design-selection {
+    position: absolute;
+    width: 57%;
+  }
+
+  .design-selection h3 {
+    text-align: left;
+  }
+
+  .design-selection ul > li {
+    position: relative;
+    font-size: 1em;
+    padding: 0;
+  }
+
+  .design-selection ul > li > a:first-child {
+    /* Inline-block is needed to set margin */
+    display: inline-block;
+    margin: 0.2em 0;
+  }
+
+  .designer-name {
+    position: relative;
+    padding: 0;
+    height: 1em;
+    background-color: #111111;
+    overflow: hidden;
+    font-size: 1.5em;
+    z-index: 1;
+  }
+
+  .designer-name::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 50%;
+    border: 1px solid #000000;
+    z-index: -1;
+  }
+
+  .design-selection .designer-name:link,
+  .design-selection .designer-name:visited {
+    color: #fff;
   }
 }
 
