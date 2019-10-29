@@ -935,10 +935,11 @@ Sidebar Section
 
 @media (min-width: 1367px) {
   .sidebar {
-    position: relative;
+    position: absolute;
     width: 44em;
     height: 34em;
-    top: 5em;
+    top: 0;
+    left: -37em;
     margin: 0;
     padding: 3.8em 3.2em;
     background: url(i/layer.svg) no-repeat center top / 100% 100%;
@@ -949,7 +950,7 @@ Sidebar Section
 
   .sidebar:hover {
     transform: perspective(1100px) rotateY(0deg);
-    top: 10em;
+    top: 3em;
   }
 
   .sidebar::before {
