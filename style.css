@@ -829,7 +829,7 @@ footer a:nth-child(5)::after {
   .main footer a::after {
     display: none;
   }
-
+}
 /*********************************
 Sidebar Section
 *********************************/
@@ -968,9 +968,6 @@ Design Selection Section
 
 .design-selection {
   padding: 0 0.4em;
-}
-
-.design-selection ul {
 }
 
 .design-selection ul > li{
