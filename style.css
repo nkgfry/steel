@@ -79,7 +79,7 @@ body::after {
     position: relative;
     margin: 7.5em auto 0;
     background: url(i/layer-middle.svg);
-    animation-name: load-400;
+    animation-name: on-load-400;
     animation-duration: 1.5s;
   }
 }
@@ -109,7 +109,7 @@ body::after {
     width: 800px;
     background: initial;
     margin: 0 auto;
-    animation-name: load-800;
+    animation-name: on-load-800;
     animation-duration: 1.5s;
   }
 
@@ -120,12 +120,17 @@ body::after {
 }
 
 @media (min-width: 1367px) {
+  html {
+    overflow: hidden;
+  }
+
   body::before {
     background: url(i/bg1.svg) left top / 300px no-repeat fixed;
   }
 
   body::after {
-    background: url(i/bg2.svg) right top / 300px no-repeat fixed;
+    background: url(i/footer.svg) left 445px top 95px / 22% no-repeat,
+                url(i/bg2.svg) right top / 300px no-repeat fixed;
   }
 
   .page-wrapper {
@@ -474,7 +479,8 @@ p {
     transition: top 1.5s,
                 left 1s 1.5s,
                 transform 1.5s;
-  }
+    z-index: 1;
+    }
 
   .summary:hover {
     top: 100px;
@@ -558,6 +564,149 @@ p {
 
   div.preamble p {
     font-size: 0.95em;
+  }
+
+  .main {
+    width: 550px;
+    height: 380px;
+    position: absolute;
+    top: 60px;
+    left: 330px;
+    background: url(i/layer-middle.svg) center top / 100%;
+    transform: perspective(1000px) rotateY(-40deg);
+    animation: main-transition-in-1367 1.5s ease-out,
+               main-transition-out-1367 1.5s 59s;
+  }
+
+  .main::before{
+    content: "";
+    display: inline-block;
+    width: 550px;
+    height: 535px;
+    position: absolute;
+    top: -534px;
+    left: 0;
+    background: url(i/hook3.svg) left 105px bottom 0px / 63% no-repeat,
+                url(i/layer-frame.svg) left 0 top 486px / 100% no-repeat;
+  }
+
+  .main::after {
+    content: "";
+    display: inline-block;
+    width: 550px;
+    height: 50px;
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    background: url(i/layer-frame.svg) center bottom / 100% no-repeat;
+  }
+
+  .requirements,
+  .explanation,
+  .participation,
+  .benefits {
+    width: 100%;
+    position: absolute;
+  }
+  
+  .requirements *,
+  .explanation *,
+  .participation *,
+  .benefits * {
+    opacity: 0;
+  }
+
+  .main div {
+    padding: 0;
+  }
+
+  .main div h3 {
+    margin-top: 0.5em;
+  }
+
+  .main div p {
+    display: block;
+    position: absolute;
+    margin: 0 3.5em;
+  }
+
+  div.explanation h3 {
+    animation: main-content-1367 11.5s;
+  }
+
+  div.explanation p:nth-of-type(1),
+  div.explanation p:nth-of-type(1) * {
+    animation: main-content-1367 6s;
+  }
+
+  div.explanation p:nth-of-type(2) {
+    animation: main-content-1367 6s ease-in 5.5s;
+  }
+
+  div.participation h3 {
+    animation: main-content-1367 17s 10.5s;
+  }
+
+  div.participation p:nth-of-type(1),
+  div.participation p:nth-of-type(1) * {
+    animation: main-content-1367 6s ease-in 10.5s ;
+  }
+
+  div.participation p:nth-of-type(2),
+  div.participation p:nth-of-type(2) * {
+    animation: main-content-1367 6s ease-in 16s;
+  }
+
+  div.participation p:nth-of-type(3),
+  div.participation p:nth-of-type(3) * {
+    animation: main-content-1367 6s ease-in 21.5s;
+  }
+
+  div.benefits h3 {
+    animation: main-content-1367 6s 26.5s;
+  }
+
+  div.benefits p:nth-of-type(1),
+  div.benefits p:nth-of-type(1) * {
+    animation: main-content-1367 6s ease-in 26.5s;
+  }
+
+  div.requirements h3 {
+    animation: main-content-1367 28s 31.5s;
+  }
+
+  div.requirements p:nth-of-type(1),
+  div.requirements p:nth-of-type(1) * {
+    animation: main-content-1367 6s ease-in 31.5s;
+  }
+
+  div.requirements p:nth-of-type(2),
+  div.requirements p:nth-of-type(2) * {
+    animation: main-content-1367 6s ease-in 37s;
+  }
+
+  div.requirements p:nth-of-type(3),
+  div.requirements p:nth-of-type(3) * {
+    animation: main-content-1367 6s ease-in 42.5s;
+  }
+
+  div.requirements p:nth-of-type(4),
+  div.requirements p:nth-of-type(4) * {
+    animation: main-content-1367 6s ease-in 48s;
+  }
+
+  div.requirements p:nth-of-type(5),
+  div.requirements p:nth-of-type(5) * {
+    animation: main-content-1367 5.5s ease-in-out 53.5s;
+  }
+
+  .main abbr {
+    color: #fff;
+  }
+  
+  .main.supporting [role="article"] p a {
+    width: initial;
+    padding: 0;
   }
 }
 
@@ -653,6 +802,44 @@ footer a:nth-child(5)::after {
     bottom: -32px;
     background: url(i/layer-frame.svg) center bottom / 100% no-repeat;
   }
+}
+
+@media (min-width: 1367px) {
+  .main footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 400px;
+    position: fixed;
+    top: -160px;
+    right: -350px;
+    transform: scale(0.7, 0.7); 
+  }
+
+  .main footer a {
+    display: block;
+    position: relative;
+    z-index: 3;
+    font-size: 3.5em;
+    color: transparent;
+    text-align: left;
+  }
+
+  .main footer a::after {
+    display: none;
+  }
+
+  /* .page-wrapper::after {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 400px;
+    position: absolute;
+    top: -20px;
+    right: -625px;
+    background: url(i/footer.svg) left top / 110% no-repeat;
+    z-index: 1;
+  } */
 }
 
 /*********************************
@@ -995,19 +1182,29 @@ Zen Resources Section
 Keyframes
 *********************************/
 
-@keyframes load-400 {
+@keyframes on-load-400 {
   from {top: -8em;}
   to {top: 0;}
 }
 
-@keyframes load-800 {
+@keyframes on-load-800 {
   from {top: 10em;}
   to {top: 0;}
 }
 
-@keyframes header {
-  from {
-    top: 175px;
-    transform: scale(1.25, 1.25);
-  }
+@keyframes main-content-1367 {
+  0% {opacity: 0;}
+  15%, 95% {opacity: 1;}
+  100% {opacity: 0;}
+}
+
+
+@keyframes main-transition-in-1367 {
+  from {top: -800px;}
+  to {top: 60px;}
+}
+
+@keyframes main-transition-out-1367 {
+  from {top: 60px;}
+  to {top: -800px;}
 }
