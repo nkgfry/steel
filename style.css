@@ -120,9 +120,9 @@ body::after {
 }
 
 @media (min-width: 1367px) {
-  html {
-    overflow: hidden;
-  }
+  /* html { */
+  /*   overflow: hidden; */
+  /* } */
 
   body::before {
     background: url(i/bg1.svg) left top / 300px no-repeat fixed;
@@ -518,6 +518,7 @@ p {
     left: -370px;
     padding: 1em 3em;
     background: url(i/layer-middle.svg) center top / 100%;
+    z-index: 3;
     transform: skewY(-5deg);
     transition: top 1.2s,
                 left 1s 1.2s,
@@ -828,19 +829,6 @@ footer a:nth-child(5)::after {
   .main footer a::after {
     display: none;
   }
-
-  /* .page-wrapper::after {
-    content: "";
-    display: block;
-    width: 100px;
-    height: 400px;
-    position: absolute;
-    top: -20px;
-    right: -625px;
-    background: url(i/footer.svg) left top / 110% no-repeat;
-    z-index: 1;
-  } */
-}
 
 /*********************************
 Sidebar Section
